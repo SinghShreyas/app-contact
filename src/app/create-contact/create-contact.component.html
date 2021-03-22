@@ -1,0 +1,120 @@
+<div class="container">
+    <h1 *ngIf="!userDetails">Create New Contact</h1>
+    <h1 *ngIf="userDetails">Edit Contact Details</h1>
+    <form>
+        <div class="row">
+            <div class="col-12">
+                <h3>User Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Your Name" [(ngModel)]="userDetails.name" name="name">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Your Username" [(ngModel)]="userDetails.username" name="username">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Enter Email" [(ngModel)]="userDetails.email" name="email">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Enter Your Phone" [(ngModel)]="userDetails.phone" name="phone">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Address Details</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="suite">Suite</label>
+                    <input type="text" class="form-control" id="suite" placeholder="Enter Suite" [(ngModel)]="userDetails.suite" name="suite">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="text" class="form-control" id="street" placeholder="Enter Street" [(ngModel)]="userDetails.street" name="street">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter City" [(ngModel)]="userDetails.city" name="city">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="zipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="zipcode" placeholder="Enter Zipcode" [(ngModel)]="userDetails.zipcode" name="zipcode">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="geolocationLat">Lat</label>
+                    <input type="text" class="form-control" id="geolocationLat" placeholder="Lat" [(ngModel)]="userDetails.lat" name="lat">
+                </div> 
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="geolocationLng">Lng</label>
+                    <input type="text" class="form-control" id="geolocationLng" placeholder="Lng" [(ngModel)]="userDetails.lng" name="lng">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3>Comapany Details</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="c_name">Comapany Name</label>
+                    <input type="text" class="form-control" id="c_name" placeholder="Enter Company Name" [(ngModel)]="userDetails.companyName" name="companyName">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label for="c_website">Comapany Website</label>
+                    <input type="text" class="form-control" id="c_website" placeholder="Enter Company Website" [(ngModel)]="userDetails.website" name="website">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button mat-raised-button color="primary">Submit</button>
+                <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+.userTable {
+    margin-bottom: 0;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table {
+    color: #646f82;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+    border: none;
+    margin: 0;
+}
+
+.table tbody {
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px rgb(0 0 0 / 8%);
+}
+
+table tr:first-child td:first-child {
+    border-top-left-radius: 5px;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 0.75rem 1.25rem;
+    background: #ffffff;
+    height: 60px;
+    color: #8b8d8f;
+    font-weight: 600;
+    border-top: 1px solid #dee2e6;
+}
+
+.table tbody td button {
+    margin-left: 6px;
+    margin-bottom: 6px;
+}
+
+.userProfile {
+    top: 50px;
+    padding: 20px;
+    position: relative;
+}
+
+.userProfile .userLogo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ff4081;
+    margin: 0 auto;
+}
+
+.userProfile .userLogo h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 60px;
+}
+
+.userId {
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.userName {
+    padding: 20px 0px;
+}
+
+.userDetails {
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
+.bgImg {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+}
+
+div h3 {
+    // background-color: #3f51b5;
+    // color: #ffffff;
+    padding: 6px;
+    box-shadow: 2px 8px 10px 0px #c9c9c9;
+}
+
+.tooltipBox {
+    position: relative;
+}
+
+.tooltipBox .tooltiptext {
+    position: absolute;
+    left: 51px;
+    /* right: -26px; */
+    top: -83px;
+    visibility: hidden;
+    z-index: 99;
+}
+
+.tooltipBox:hover .tooltiptext {
+    visibility: visible;
+}
+
+.breakdown .breakdownBox {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.userAction {
+    display: flex;
+}
+
+.userAction span:hover {
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: #e9ecef;
+}
+
+.confirmColor {
+    color: #ff0000;
+}
+
+h1 {
+    font-family: RobotoCondensed-bold;
+}
+
+p {
+        font-family: RobotoCondensed-regular;
+}

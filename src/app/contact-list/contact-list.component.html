@@ -1,0 +1,131 @@
+<div class="container">
+    <h1>Contact List App</h1>
+
+    <div class="row">
+        <div class="col-12 pb-4">
+            <button mat-raised-button color="primary" (click)="createNewContact()">Create New
+                Contact</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 userTabel">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>Name</td>
+                            <td>Username</td>
+                            <td>Phone</td>
+                            <td>Email</td>
+                            <td>Website</td>
+                            <td>Address</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let contact of contactList; let i = index;">
+                            <td>
+                                <a mat-mini-fab routerLink="." data-toggle="modal" data-target="#exampleModalCenter"
+                                    (click)="getCurrentUserDetails(i)">{{ contact.name | letter }}
+                                </a>
+                            </td>
+                            <td>{{ contact.name }}</td>
+                            <td>{{ contact.username }}</td>
+                            <td>{{ contact.phone }}</td>
+                            <td>{{ contact.email }}</td>
+                            <td>{{ contact.website }}</td>
+                            <td>{{ contact.address.suite + ', ' + contact.address.street + ' ' + contact.address.city +
+                                '-' + contact.address.zipcode}}</td>
+                            <td>
+                                <div class="userAction">
+                                    <span class="material-icons" (click)="editDetails(i)">
+                                        mode_edit_outline
+                                    </span>
+                                    <span class="material-icons" (click)="delete(i)">
+                                        delete
+                                    </span>
+                                    <span class="material-icons confirmColor" (click)="confirmDelete(i)"
+                                        *ngIf="isDelete && selectedIndex === i" [@nameAnimation]="animationState">
+                                        check
+                                    </span>
+                                </div>
+                                <!-- <button mat-raised-button color="primary" (click)="editDetails(i)">Edit</button> -->
+                                <!-- <button mat-raised-button color="warn" (click)="delete(i)"
+                                    [disabled]="isDelete && selectedIndex === i">Delete</button> -->
+                                <!-- <button mat-raised-button color="warn">confirm</button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0" id="exampleModalLongTitle">Contact Details</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="userProfile">
+                                <div class="userLogo">
+                                    <h1>{{ currentUserList.name | letter }}</h1>
+                                </div>
+                                <div class="userId">
+                                    <h1>{{ currentUserList.name }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="userName">
+                                <h1 class="m-0">{{ currentUserList.username }}</h1>
+                                <p class="m-0">{{ currentUserList.address }}</p>
+                            </div>
+                            <div class="userDetails">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h3>Contact Details</h3>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p>Email Id: {{ currentUserList.email }}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p>Phone: {{ currentUserList.phone }}</p>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <h3>Company Details</h3>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p>Company Name: {{ currentUserList.companyName }}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm{-12">
+                                        <p>Company Website: {{ currentUserList.website }}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p>Company Phrase: {{ currentUserList.companyPhrase }}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <p>Company bs: {{ currentUserList.companybs }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
